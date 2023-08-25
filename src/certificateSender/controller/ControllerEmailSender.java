@@ -2,6 +2,8 @@ package certificateSender.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +52,13 @@ public class ControllerEmailSender {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
 				}
 
+			}
+		});
+		
+		this.mainView.getMnHelpEnviarEmail().addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				JOptionPane.showMessageDialog(mainView, "1º Preencher Titulo; \n2º Preencher corpo do email; \n3º Selecionar diretorio contendo os certificados em formato pdf; \nObs: O nome do arquivo deve ser correspondente ao email da pessoa para qual deseja enviar.\nEx: fulanodetal@gmail.com");
 			}
 		});
 

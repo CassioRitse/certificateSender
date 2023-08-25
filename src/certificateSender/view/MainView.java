@@ -15,6 +15,11 @@ import java.awt.Color;
 import javax.swing.SwingConstants;
 import java.awt.SystemColor;
 import javax.swing.border.LineBorder;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class MainView extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -27,6 +32,12 @@ public class MainView extends JFrame {
 	private JButton btn_selectDirectory;
 	private JButton btn_sendCertificates;
 	private JLabel lbl_nameDirectory;
+	private JMenuItem mnHelpEnviarEmail;
+	
+	public static void main(String args[]) {
+		MainView mv = new MainView();
+		mv.setVisible(true);
+	}
 
 	/**
 	 * Create the frame.
@@ -36,7 +47,21 @@ public class MainView extends JFrame {
 		setLocationRelativeTo(null);
 		setTitle("CertificateSender");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 422, 555);
+		setBounds(100, 100, 422, 580);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu newMenu = new JMenu("Help");
+		menuBar.add(newMenu);
+		
+		mnHelpEnviarEmail = new JMenuItem("Enviar Email");
+		mnHelpEnviarEmail.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			}
+		});
+		newMenu.add(mnHelpEnviarEmail);
 		contentPane = new JPanel();
 		contentPane.setBackground(SystemColor.menu);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -182,4 +207,9 @@ public class MainView extends JFrame {
 		this.lbl_nameDirectory = lbl_nameDirectory;
 	}
 
+	public JMenuItem getMnHelpEnviarEmail() {
+		return mnHelpEnviarEmail;
+	}
+	
+	
 }
