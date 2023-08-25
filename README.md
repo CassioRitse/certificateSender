@@ -1,7 +1,8 @@
 <h1 align="center"> certificateSender </h1>
 <p align="justify"> Desktop application in Java for sending academic certificates </p>
-> Projeto: MVP :heavy_check_mark:
-> Status do Projeto: Em desenvolvimento :warning:
+- Projeto: MVP :heavy_check_mark:
+<br>
+- Status do Projeto: Em desenvolvimento :warning:
 <br>
 - [ ] Add loading screen
 <hr>
